@@ -8,7 +8,7 @@ import { AuthenticationService } from '../../shared/_services/authentication.ser
 })
 export class LoginComponent implements OnInit {
 
-  user = new Object() as IUser
+  user = new Object() as IUser;
   constructor(private authenticationService: AuthenticationService) {
     this.user;
   }

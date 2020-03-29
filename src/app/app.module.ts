@@ -11,6 +11,25 @@ import { HomeComponent } from './home/home/home.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { JwtInterceptor } from './shared/_helpers/jwt.interceptor';
 import { ErrorInterceptor } from './shared/_helpers/error.interceptor';
+import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './shared/_helpers/auth.guard';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: HomeComponent,
+    canActivate: [AuthGuard]
+  },
+
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+
+  // otherwise redirect to home
+  { path: '**', redirectTo: 'login' }
+];
 
 @NgModule({
   declarations: [
@@ -23,7 +42,13 @@ import { ErrorInterceptor } from './shared/_helpers/error.interceptor';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    FormsModule,
+    ReactiveFormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    RouterModule.forRoot(routes)
+  ], exports: [
+    LoginComponent,
+    HomeComponent
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
