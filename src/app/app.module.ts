@@ -14,6 +14,7 @@ import { ErrorInterceptor } from './shared/_helpers/error.interceptor';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './shared/_helpers/auth.guard';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const routes: Routes = [
   {
@@ -44,6 +45,7 @@ const routes: Routes = [
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    NgbModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     RouterModule.forRoot(routes)
   ], exports: [
