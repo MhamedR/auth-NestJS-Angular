@@ -1,10 +1,32 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- <mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <button mat-icon-button (click)="snav.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <h1 class="example-app-name">Home</h1>
+        <span class="example-spacer"></span>
+
+
+        <button mat-raised-button (click)="logout()">
+            <mat-icon>logout</mat-icon>
+        </button>
+
+    </mat-toolbar-row>
+</mat-toolbar>
+
+
+<mat-sidenav-container class="sidenav-content" >
+    <mat-sidenav #snav>
+        <mat-nav-list class="sidenav">
+            <a mat-list-item>list</a>
+        </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="container">
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+<footer>footer</footer> -->
 
 <router-outlet></router-outlet>
