@@ -1,0 +1,63 @@
+<mat-card>
+
+    <mat-horizontal-stepper [linear]="isLinear" #stepper>
+        <mat-step [stepControl]="firstForm">
+            <form #firstForm>
+                <!--first form -->
+                <ng-template matStepLabel>Fill out your name</ng-template>
+                <mat-form-field>
+                    <mat-label>Name</mat-label>
+                    <input matInput placeholder="First name" name="firstName" [(ngModel)]="user.firstName" required>
+                </mat-form-field>
+                <br />
+                <mat-form-field>
+                    <mat-label>Last name</mat-label>
+                    <input matInput placeholder="Last name" name="lastName" [(ngModel)]="user.lastName" required>
+                </mat-form-field>
+                <br />
+                <mat-form-field>
+                    <mat-label>Email</mat-label>
+                    <input matInput placeholder="Email" name="email" [(ngModel)]="user.email" required>
+                </mat-form-field>
+
+                <div>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+                <!--first form -->
+
+            </form>
+        </mat-step>
+        <mat-step [stepControl]="secondFormGroup">
+            <form #secondFormGroup>
+                <!--second form -->
+                <ng-template matStepLabel>Fill out your address</ng-template>
+                <mat-form-field>
+                    <mat-label>Date of birth</mat-label>
+                    <input matInput placeholder="Date of birth" name="dateOfBirth" [(ngModel)]="user.dateOfBirth"
+                        required>
+                </mat-form-field>
+                <br />
+                <mat-form-field>
+                    <mat-label>tel</mat-label>
+                    <input matInput placeholder="Phone number" name="tel" [(ngModel)]="user.tel" required>
+                </mat-form-field>
+                <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+                <!--second form -->
+
+            </form>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>Done</ng-template>
+            <p>You are now done.</p>
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button (click)="stepper.reset()">Reset</button>
+                <button mat-button (click)="createUser(user)">Submit</button>
+
+            </div>
+        </mat-step>
+    </mat-horizontal-stepper>
+</mat-card>

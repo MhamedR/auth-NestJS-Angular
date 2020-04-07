@@ -48,6 +48,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
+import { SignUpComponent } from './sign-up/sign-up/sign-up.component';
 
 const routes: Routes = [
   {
@@ -60,6 +61,10 @@ const routes: Routes = [
     path: 'login',
     component: LoginComponent
   },
+  {
+    path:'create-account',
+    component:SignUpComponent
+  },
 
   // otherwise redirect to home
   { path: '**', redirectTo: '/login' }
@@ -69,7 +74,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
