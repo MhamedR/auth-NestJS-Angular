@@ -49,6 +49,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
 import { SignUpComponent } from './sign-up/sign-up/sign-up.component';
+import { HeaderComponent } from './shared/_layout/header/header.component';
+import { FooterComponent } from './shared/_layout/footer/footer.component';
 
 const routes: Routes = [
   {
@@ -75,7 +77,9 @@ const routes: Routes = [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    SignUpComponent
+    SignUpComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
