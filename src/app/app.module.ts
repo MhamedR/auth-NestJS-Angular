@@ -90,7 +90,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     NgbModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' }),
     MatCheckboxModule,
     MatCheckboxModule,
     MatButtonModule,
